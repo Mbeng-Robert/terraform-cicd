@@ -9,7 +9,7 @@ on:
 
 jobs:
   terraform_plan:
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/feature/')
+    # if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/feature/')
     runs-on: ubuntu-latest
 
   #   env:
@@ -30,7 +30,7 @@ jobs:
   #       run: terraform plan
 
   terraform_apply:
-    # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     env:
